@@ -31,4 +31,8 @@ def create_app(test_config=None):
     def home():
         return render_template('index.html', title="Dashboard", content="Home")
 
+    @app.route('/gauges')
+    def gauges():
+        return render_template('gauges.html')
+
     return app
