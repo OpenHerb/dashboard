@@ -27,7 +27,8 @@ def create_app(test_config=None):
         pass
 
     @app.route('/')
-    def hello():
-        return render_template('index.html', content="Testing")
+    @app.route('/home')
+    def home():
+        return render_template('index.html', title="Dashboard", content="Home")
 
     return app
