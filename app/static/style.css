@@ -11,32 +11,34 @@ body {
 }
   
 /* ------ Default Style ---------- */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: space-around;
+}
+
 .gauge-container {
-  width: 500px;
-  height: 500px;
   display: block;
-  float: left;
+  width: 400px;
+  height: 400px;
   padding: 10px;
   background-color: rgba(34, 34, 34, 0);
-  margin: 7px;
-  border-radius: 3px;
-  position: relative;
 }
+
 .gauge-container > .label {
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: inline-block;
-  background: rgba(0,0,0,0.5);
+  text-align: center;
+  background: rgba(0, 0, 0, 0);
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.7em;
-  padding: 5px 10px;
+  font-size: 1.5em;
 }
+
 .gauge-container > .gauge .dial {
   stroke: #2b3947;
   stroke-width: 3;
-  fill: rgba(0,0,0,0);
+  fill: rgba(0,0,0,0)
 }
+
 .gauge-container > .gauge .value {
   stroke-width: 4;
 }
