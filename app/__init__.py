@@ -20,19 +20,9 @@ def create_app(test_config=None):
         # load the test config if passed in
         app.config.from_mapping(test_config)
 
-    # ensure the instance folder exists
-    try:
-        os.makedirs(app.instance_path)
-    except OSError:
-        pass
-
     @app.route('/')
     @app.route('/home')
-    def home():
+    def index():
         return render_template('index.html', title="Dashboard", content="Home")
-
-    @app.route('/gauges')
-    def gauges():
-        return render_template('gauges.html')
 
     return app
