@@ -4,8 +4,8 @@ var gauge = Gauge(
         min: 0,
         max: 100,
         value: 50,
-        dialStartAngle: 100,
-        dialEndAngle: 35,
+        showValue: true,
+        radius: 100,
         color: function(value) {
             if(value < 25) {
             return "#5ee432";
