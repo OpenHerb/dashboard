@@ -34,17 +34,17 @@ body {
 }
 
 .gauge-container > .gauge .dial {
-  stroke: #2b3947;
+  stroke: #334353;
   stroke-width: 3;
   fill: rgba(0,0,0,0)
 }
 
 .gauge-container > .gauge .value {
-  stroke-width: 4;
+  stroke-width: 5;
 }
 
 .gauge-container > .gauge .value-text {
   fill: rgb(179, 179, 179);
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.0em;
+  font-size: 1.5em;
 }
