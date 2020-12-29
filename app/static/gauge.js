@@ -1,20 +1,20 @@
 // require js pkg
 var tempGauge = Gauge(
     document.getElementById("temp-gauge"), {
-        min: 0,
-        max: 100,
-        value: 50,
+        min: 10,
+        max: 40,
+        value: 20,
         radius:100,
         showValue: true,
         color: function(value) {
-            if(value < 25) {
-            return "#5ee432";
-            }else if(value < 50) {
-            return "#fffa50";
-            }else if(value < 75) {
-            return "#f7aa38";
+            if(value >= 20 && value <= 24) {
+                return "#5ee432";
+            }else if(value >= 16 && value <= 28) {
+                return "#fffa50";
+            }else if(value >= 12 && value <= 32) {
+                return "#f7aa38";
             }else {
-            return "#ef4655";
+                return "#ef4655";
             }
         }
     }
@@ -68,11 +68,11 @@ humidityGauge.setValue(50);
 asGauge.setValue(50);
 
 (function loop() {
-    var randTemp = Math.random() * 100;
+    var randTemp = (Math.random() * 30)+10;
     var randHumidity = Math.random() * 100;
     var randAs = Math.random() * 100;
     // setValueAnimated(value, durationInSecs);
-    tempGauge.setValueAnimated(100 - randTemp, 2);
+    tempGauge.setValueAnimated(randTemp, 2);
     humidityGauge.setValueAnimated(100 - randHumidity, 2);
     asGauge.setValueAnimated(100 - randAs, 2);
     window.setTimeout(loop, 6000);
