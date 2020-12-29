@@ -1,7 +1,7 @@
 body {
   background-color: rgba(0,0,0,0.8);
   color: #999;
-  font-family: Hevletica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
   
 .info {
@@ -12,12 +12,12 @@ body {
   
 /* ------ Default Style ---------- */
 .gauge-container {
-  width: 200px;
-  height: 200px;
+  width: 500px;
+  height: 500px;
   display: block;
   float: left;
   padding: 10px;
-  background-color: #222;
+  background-color: rgba(34, 34, 34, 0);
   margin: 7px;
   border-radius: 3px;
   position: relative;
@@ -28,50 +28,21 @@ body {
   top: 0;
   display: inline-block;
   background: rgba(0,0,0,0.5);
-  font-family: monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.7em;
   padding: 5px 10px;
 }
 .gauge-container > .gauge .dial {
-  stroke: #334455;
-  stroke-width: 1;
+  stroke: #2b3947;
+  stroke-width: 3;
   fill: rgba(0,0,0,0);
 }
 .gauge-container > .gauge .value {
-  stroke: rgb(47, 227, 255);
-  stroke-width: 2;
-  fill: rgba(0,0,0,0);
+  stroke-width: 4;
 }
+
 .gauge-container > .gauge .value-text {
-  fill: rgb(47, 227, 255);
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 0.8em;
-}
-
-/* ------- Alternate Style ------- */
-.wrapper {
-  height: 100px;
-  float: left;
-  margin: 7px;
-  overflow: hidden;
-}
-.wrapper > .gauge-container {
-  background-color: #ffffff;
-  margin: 0;
-}
-
-.gauge-container.two > .gauge .dial {
-  stroke: #334455;
-  stroke-width: 10;
-}
-.gauge-container.two > .gauge .value {
-  stroke: orange;
-  stroke-dasharray: none;
-  stroke-width: 13;
-}
-.gauge-container.two > .gauge .value-text {
-  fill: #ccc;
-  font-weight: 100;
-  font-size: 1.5em;
+  fill: rgb(179, 179, 179);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.0em;
 }
