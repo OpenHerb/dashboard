@@ -6,8 +6,27 @@ body {
 
 h1 {
   text-align: center;
-  padding: 3%;
+  padding: 2%;
   background-color: #1e1f20;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(31, 31, 31);
+  color: white;
+  text-align: center;
 }
 
 /* ------ Default Style ---------- */
@@ -64,7 +83,7 @@ h1 {
 }
 
 .gauge-container > .gauge .value-text {
-  fill: rgb(179, 179, 179);
+  fill: rgb(202, 201, 201);
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5em;
   display: inline-block;

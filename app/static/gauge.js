@@ -1,4 +1,3 @@
-// require js pkg
 var tempGauge = Gauge(
     document.getElementById("temp-gauge"), {
         min: 10,
