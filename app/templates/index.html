@@ -11,11 +11,44 @@
         <div class="label">Soil Humidity</div>
         <div class="value-text">%</div>
     </div>
-    <div id="as-gauge" class="gauge-container">
+    <div id="lux-gauge" class="gauge-container">
         <div class="label">Luminous Flux</div>
         <div class="value-text">Lux</div>
     </div>
 </div>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyDL9CwpORKoxZkAbmg47zcLZrExAvPNH6c",
+        authDomain: "openherb-89fa0.firebaseapp.com",
+        databaseURL: "https://openherb-89fa0-default-rtdb.firebaseio.com",
+        projectId: "openherb-89fa0",
+        storageBucket: "openherb-89fa0.appspot.com",
+        messagingSenderId: "347898545625",
+        appId: "1:347898545625:web:7c459f88074b52e4e805c8",
+        measurementId: "G-B0ZMNQWBT0"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    // Get a reference to the database service
+    var database = firebase.database();
+    var telemetry = firebase.database().ref('/');
+    telemetry.on('value', (snapshot) => {
+        const data = snapshot.val();
+        console.log(data);
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/svg-gauge@1.0.6/src/gauge.js"></script>
 <script src="static/gauge.js"></script>
 {% endblock %}

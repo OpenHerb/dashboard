@@ -1,8 +1,9 @@
+
 var tempGauge = Gauge(
     document.getElementById("temp-gauge"), {
         min: 10,
         max: 40,
-        value: 20,
+        value: 25,
         radius:100,
         showValue: true,
         color: function(value) {
@@ -23,7 +24,7 @@ var humidityGauge = Gauge(
     document.getElementById("humidity-gauge"), {
         min: 0,
         max: 50,
-        value: 50,
+        value: 25,
         radius:100,
         showValue: true,
         color: function(value) {
@@ -40,8 +41,8 @@ var humidityGauge = Gauge(
     }
 );
 
-var asGauge = Gauge(
-    document.getElementById("as-gauge"), {
+var luxGauge = Gauge(
+    document.getElementById("lux-gauge"), {
         min: 0,
         max: 100,
         value: 50,
@@ -62,17 +63,17 @@ var asGauge = Gauge(
 );
 
 // Set gauge value
-tempGauge.setValue(50);
-humidityGauge.setValue(50);
-asGauge.setValue(50);
+tempGauge.setValue(25);
+humidityGauge.setValue(25);
+luxGauge.setValue(50);
 
 (function loop() {
     var randTemp = (Math.random() * 30)+10;
     var randHumidity = Math.random() * 50;
-    var randAs = Math.random() * 100;
+    var randLux = Math.random() * 100;
     // setValueAnimated(value, durationInSecs);
     tempGauge.setValueAnimated(randTemp, 2);
     humidityGauge.setValueAnimated(randHumidity, 2);
-    asGauge.setValueAnimated(100 - randAs, 2);
-    window.setTimeout(loop, 6000);
+    luxGauge.setValueAnimated(100 - randLux, 2);
+    window.setTimeout(loop, 2000);
 })();
