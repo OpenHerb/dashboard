@@ -33,6 +33,9 @@ telemetry.on('child_added', (snapshot) => {
     console.log("Soil Humidity: " + humidity + " %");
     console.log("Luminous Flux: " + lux + " Lux");
     console.log("Last Injection: " + injection);
+    tempGauge.setValueAnimated(temp, 2);
+    humidityGauge.setValueAnimated(humidity, 2);
+    luxGauge.setValueAnimated(lux, 2);
 });
 
 var tempGauge = Gauge(
@@ -102,11 +105,3 @@ var luxGauge = Gauge(
 tempGauge.setValue(25);
 humidityGauge.setValue(25);
 luxGauge.setValue(50);
-
-(function loop() {
-    // setValueAnimated(value, durationInSecs);
-    tempGauge.setValueAnimated(temp, 2);
-    humidityGauge.setValueAnimated(humidity, 2);
-    luxGauge.setValueAnimated(lux, 2);
-    window.setTimeout(loop, 1000);
-})();
