@@ -1,29 +1,30 @@
 {% extends "base.html" %}
 {% block title %}Dashboard{% endblock %}
 {% block content %}
-<h1>Dashboard</h1>
-<div>
-    <h2 style="text-align: center;">Last Injection Timestamp: </h2>
+<div class="header">
+    <img src="../static/icon.png" alt="logo"></img>
+    <h1>DASHBOARD</h1>
 </div>
 <div class="flex-container">
-    <div id="temp-gauge" class="gauge-container">
-        <div class="label">Temperature</div>
-        <div class="value-text">&#176C</div>
+    <div id="temp-gauge" class="gauge-container"></div>
+    <div id="humidity-gauge" class="gauge-container"></div>
+    <div id="lux-gauge" class="gauge-container"></div>
+</div>
+<div class="flex-container">
+    <div style="display: block; font-size: 200%;">
+        Temperature
     </div>
-    <div id="humidity-gauge" class="gauge-container">
-        <div class="label">Soil Humidity</div>
-        <div class="value-text">%</div>
+    <div style="display: block; font-size: 200%;">
+        Soil Humidity
     </div>
-    <div id="lux-gauge" class="gauge-container">
-        <div class="label">Luminous Flux</div>
-        <div class="value-text">Lux</div>
+    <div style="display: block; font-size: 200%;">
+        Luminous Flux
     </div>
 </div>
 
 <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
@@ -67,7 +68,6 @@
         humidityGauge.setValueAnimated(humidity, 2);
         luxGauge.setValueAnimated(lux, 2);
     });
-
     var tempGauge = Gauge(
         document.getElementById("temp-gauge"), {
             min: 10,
@@ -85,10 +85,12 @@
                 }else {
                     return "#ef4655";
                 }
+            },
+            label: function(val) {
+                return Math.round(val) + " °C";
             }
         }
     );
-
     var humidityGauge = Gauge(
         document.getElementById("humidity-gauge"), {
             min: 0,
@@ -106,10 +108,12 @@
                 }else {
                     return "#ef4655";
                 }
+            },
+            label: function(val) {
+                return Math.round(val) + " %";
             }
         }
     );
-
     var luxGauge = Gauge(
         document.getElementById("lux-gauge"), {
             min: 0,
@@ -127,13 +131,15 @@
                 }else {
                 return "#ef4655";
                 }
+            },
+            label: function(val) {
+                return Math.round(val) + " dB";
             }
         }
     );
-
-    // Set gauge value
-    tempGauge.setValue(25);
-    humidityGauge.setValue(25);
-    luxGauge.setValue(50);
+    // Set gauge value to minimum values
+    tempGauge.setValue(10);
+    humidityGauge.setValue(0);
+    luxGauge.setValue(0);
 </script>
 {% endblock %}
