@@ -21,6 +21,9 @@
         Luminous Flux
     </div>
 </div>
+<div id="injection-ts" style="font-size: 150%; padding: 5%; text-align: center;">
+    Last Injection: N/A
+</div>
 
 <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
 <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -35,7 +38,6 @@
     var temp = null
     var humidity = null
     var lux = null
-    var injection = null
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     var firebaseConfig = {
@@ -67,6 +69,7 @@
         tempGauge.setValueAnimated(temp, 2);
         humidityGauge.setValueAnimated(humidity, 2);
         luxGauge.setValueAnimated(lux, 2);
+        document.getElementById("injection-ts").textContent="Last Injection: " + injection;
     });
     var tempGauge = Gauge(
         document.getElementById("temp-gauge"), {
