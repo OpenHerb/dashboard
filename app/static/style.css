@@ -4,28 +4,12 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
-.header img {
-  float: left;
-  width: 7.5%;
-  height: 7.5%;
-  background-color: rgb(31, 31, 31);
-}
-
 h1 {
   text-align: center;
   padding: 2%;
   margin-block-start: 0em;
   margin-block-end: 0em;
   background-color: rgb(31, 31, 31);
-}
-
-p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  margin-bottom: 1rem;
 }
 
 .footer {
@@ -36,6 +20,18 @@ p {
   background-color: rgb(31, 31, 31);
   color: white;
   text-align: center;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 2%;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 /* ------ Default Style ---------- */
@@ -50,8 +46,6 @@ p {
   display: block;
   justify-content: center;
   align-items: baseline;
-  width: 25%;
-  height: 25%;
   background-color: rgba(34, 34, 34, 0);
 }
 
