@@ -5,20 +5,17 @@
     <h1>OpenHerb Dashboard</h1>
 </div>
 <div class="flex-container">
-    <div class="card">
-        <div id="temp-gauge" class="gauge-container"></div>
-        <h2>Temperature</h2>
+    <div id="temp-gauge" class="gauge-container">
+        <div class="label">Temperature</div>
     </div>
-    <div class="card">
-        <div id="humidity-gauge" class="gauge-container"></div>
-        <h2>Soil Humidity</h2>
+    <div id="humidity-gauge" class="gauge-container">
+        <div class="label">Soil Humidity</div>
     </div>
-    <div class="card">
-        <div id="lux-gauge" class="gauge-container"></div>
-        <h2>Luminous Flux</h2>
+    <div id="lux-gauge" class="gauge-container">
+        <div class="label">Luminous Flux</div>
     </div>
 </div>
-<div id="injection-ts" style="font-size: 150%; padding: 5%; text-align: center;">
+<div id="injection-ts" style="font-size: 150%; padding: 1%; text-align: center;">
     Last Injection: N/A
 </div>
 <div id='temp-scatter'></div>
@@ -73,7 +70,7 @@
         injection = data.I
         console.log("Temperature: " + temp + " °C" + " | Soil Humidity: " + humidity + " %" + " | Luminous Flux: " + lux + " Lux" + " | Last Injection: " + injection);
         // update gauge values
-        tempGauge.setValueAnimated(temp, 2);
+        // tempGauge.setValueAnimated(temp, 2);
         humidityGauge.setValueAnimated(humidity, 2);
         luxGauge.setValueAnimated(lux, 2);
         // update injection timestamps
@@ -130,10 +127,11 @@
             }
         }
     );
+    
     var luxGauge = Gauge(
         document.getElementById("lux-gauge"), {
             min: minLx,
-            max: minLx,
+            max: maxLx,
             value: 0,
             radius:100,
             showValue: true,
@@ -163,26 +161,31 @@
         x: [],
         y: [],
         mode: 'lines+markers',
-        type: 'scatter'
+        type: 'scatter',
+        line: {
+            color: 'rgb(247, 45, 45)',
+            width: 4
+        },
     };
     var tempLayout = {
         yaxis: {
             autorange: true,
-            label: 'Temperature',
+            gridcolor: '#7f7f7f',
+            title: {
+                text: 'Temperature (°C)',
+                font: {
+                    family: 'Quicksand, sans-serif',
+                    size: 18,
+                    color: '#7f7f7f'
+                }
+            },
             range: [minTemp, maxTemp]
         },
-        line: {width: 10},
+        xaxis: {
+            gridcolor: '#7f7f7f'
+        },
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
-        legend: {
-            y: 0.5,
-            yref: 'paper',
-            font: {
-                family: 'Quicksand, sans-serif',
-                size: 20,
-                color: 'grey',
-            }
-        },
     };
     Plotly.newPlot('temp-scatter', [tempTrace], tempLayout, {responsive: true});
 
@@ -190,26 +193,31 @@
         x: [],
         y: [],
         mode: 'lines+markers',
-        type: 'scatter'
+        type: 'scatter',
+        line: {
+            color: 'rgb(247, 133, 45)',
+            width: 4
+        },
     };
     var shLayout = {
         yaxis: {
             autorange: true,
-            label: 'Soil Humidity',
+            gridcolor: '#7f7f7f',
+            title: {
+                text: 'Soil Humidity (%)',
+                font: {
+                    family: 'Quicksand, sans-serif',
+                    size: 18,
+                    color: '#7f7f7f'
+                }
+            },
             range: [ minSh, maxSh ]
         },
-        line: {width: 4},
+        xaxis: {
+            gridcolor: '#7f7f7f'
+        },
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
-        legend: {
-            y: 0.5,
-            yref: 'paper',
-            font: {
-                family: 'Quicksand, sans-serif',
-                size: 20,
-                color: 'grey',
-            }
-        },
     };
     Plotly.newPlot('sh-scatter', [shTrace], shLayout, {responsive: true});
 
@@ -217,13 +225,18 @@
         x: [],
         y: [],
         mode: 'lines+markers',
-        type: 'scatter'
+        type: 'scatter',
+        line: {
+            color: 'rgb(247, 234, 45)',
+            width: 4
+        },
     };
     var lxLayout = {
         yaxis: {
             autorange: true,
+            gridcolor: '#7f7f7f',
             title: {
-                text: 'Luminous Flux',
+                text: 'Luminous Flux (L)',
                 font: {
                     family: 'Quicksand, sans-serif',
                     size: 18,
@@ -232,18 +245,11 @@
             },
             range: [ minLx, maxLx ]
         },
-        line: {width: 4},
+        xaxis: {
+            gridcolor: '#7f7f7f'
+        },
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
-        legend: {
-            y: 0.5,
-            yref: 'paper',
-            font: {
-                family: 'Quicksand, sans-serif',
-                size: 20,
-                color: 'grey',
-            }
-        },
     };
     Plotly.newPlot('lx-scatter', [lxTrace], lxLayout, {responsive: true});
 </script>
