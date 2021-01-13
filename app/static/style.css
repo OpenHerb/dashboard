@@ -47,17 +47,17 @@ h1 {
   position: relative;
   bottom: -45%;
   right: auto;
-  font-size: 1.5em;
+  font-size: 2.0em;
 }
 
 .gauge-container > .gauge .dial {
   stroke: #32404e;
-  stroke-width: 3;
+  stroke-width: 5;
   fill: rgba(0,0,0,0);
 }
 
 .gauge-container > .gauge .value {
-  stroke-width: 5;
+  stroke-width: 7;
 }
 
 .gauge-container > .value-text {
