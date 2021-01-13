@@ -2,13 +2,23 @@
 
 ![img](/docs/img/icon.png)
 
-The dashboard is a webapp powered by Flask to remotely monitor herb analytics.
+The dashboard is a webapp powered by Firebase Real-time Database and web hosting services to remotely monitor herb analytics.
 
 ## Quickstart
 
-Run the website in development mode (serving on localhost on port 4000)
+Install `npm` firebase-tools
 ```bash
-./flask
+npm install -g firebase-tools
+```
+
+Login to firebase cli:
+```bash
+firebase login
+```
+
+Test webapp locally on firebase web platform.
+```bash
+firebase serve
 ```
 
 ## License
