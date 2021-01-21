@@ -90,7 +90,7 @@
     var minTemp = 10
     var maxTemp = 70
     var minSh = 0
-    var maxSh = 50
+    var maxSh = 80
     var minLx = 0
     var maxLx = 500
 
@@ -152,11 +152,11 @@
             radius:100,
             showValue: true,
             color: function(value) {
-                if(value >= 20 && value <= 35) {
+                if(value >= 30 && value <= 50) {
                     return "#5ee432";
-                }else if(value >= 15 && value <= 40) {
+                }else if(value >= 20 && value <= 60) {
                     return "#fffa50";
-                }else if(value >= 10 && value <= 45) {
+                }else if(value >= 10 && value <= 70) {
                     return "#f7aa38";
                 }else {
                     return "#ef4655";
