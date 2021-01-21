@@ -92,7 +92,7 @@
     var minSh = 0
     var maxSh = 80
     var minLx = 0
-    var maxLx = 500
+    var maxLx = 300
 
     // firebase.analytics();
     // Get a reference to the database service telemetry topic
@@ -178,14 +178,14 @@
             radius:100,
             showValue: true,
             color: function(value) {
-                if(value < 25) {
-                return "#5ee432";
-                }else if(value < 50) {
-                return "#fffa50";
-                }else if(value < 75) {
-                return "#f7aa38";
+                if(value >= 75 && value <= 225) {
+                    return "#5ee432";
+                }else if(value >= 50 && value <= 250) {
+                    return "#fffa50";
+                }else if(value >= 25 && value <= 275) {
+                    return "#f7aa38";
                 }else {
-                return "#ef4655";
+                    return "#ef4655";
                 }
             },
             label: function(val) {
