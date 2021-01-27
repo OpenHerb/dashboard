@@ -192,11 +192,11 @@
             radius:100,
             showValue: true,
             color: function(value) {
-                if(value <= 150) {
+                if(value >= 200) {
                     return "#5ee432";
-                }else if(value > 25 && value < 150) {
+                }else if(value > 150) {
                     return "#fffa50";
-                }else if(value >= 25) {
+                }else if(value > 50) {
                     return "#f7aa38";
                 }else {
                     return "#ef4655";
