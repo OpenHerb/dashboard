@@ -94,7 +94,7 @@
     var humidity = null
     var lux = null
     var minTemp = 0
-    var maxTemp = 60
+    var maxTemp = 40
     var minSh = 0
     var maxSh = 100
     var minLx = 0
@@ -192,11 +192,11 @@
             radius:100,
             showValue: true,
             color: function(value) {
-                if(value >= 75 && value <= 225) {
+                if(value <= 150) {
                     return "#5ee432";
-                }else if(value >= 50 && value <= 250) {
+                }else if(value > 25 && value < 150) {
                     return "#fffa50";
-                }else if(value >= 25 && value <= 275) {
+                }else if(value >= 25) {
                     return "#f7aa38";
                 }else {
                     return "#ef4655";
@@ -275,6 +275,7 @@
 
     // trace for soil humidity line
     var shTrace = {
+        name: 'Soil Humidity',
         x: [],
         y: [],
         mode: 'lines+markers',
@@ -286,6 +287,7 @@
     };
     // trace for relative humidity line
     var rhTrace = {
+        name: 'Relative Humidity',
         x: [],
         y: [],
         mode: 'lines+markers',
