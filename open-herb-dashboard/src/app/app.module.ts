@@ -10,6 +10,8 @@ import {
   MatCardModule
   } from '@angular/material';
 
+import { SensorDataService } from './sensor-data.service';
+
 import { AppComponent } from './app.component';
 import { LuxGaugeComponent } from './lux-gauge/lux-gauge.component';
 import { TemperatureGaugeComponent } from './temperature-gauge/temperature-gauge.component';
@@ -31,9 +33,9 @@ import { RelativeHumidityGaugeComponent } from './relative-humidity-gauge/relati
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
   ],
-  providers: [],
+  providers: [SensorDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
