@@ -7,9 +7,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SoilHumidityGaugeComponent implements OnInit {
 
-  constructor() { }
+  colorScheme = {
+    domain: ['#696969']
+  };
 
-  ngOnInit() {
+  constructor() { 
+    Object.assign(this, { single });
+
+  }
+
+  public ngOnInit(): void {
+
+  }
+
+
+
+  onSelect(data): void {
+    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+  }
+
+  onActivate(data): void {
+    console.log('Activate', JSON.parse(JSON.stringify(data)));
+  }
+
+  onDeactivate(data): void {
+    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
 
 }
+
+export var single = [
+  {
+    "name": "Soil Humidity",
+    "value": 45
+  }
+];
