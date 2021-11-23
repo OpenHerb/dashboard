@@ -1,4 +1,12 @@
 
+## Open Herb Frontend
+
+This application is currently serving the main purpose to display and read information that is coming
+from the MQTT AWS service https://mqtt.org/
+
+This service is transporting important information from sensors ( temperature, Luminosity )
+
+
 
 # OpenHerbDashboard
 
@@ -29,3 +37,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## License
+[GNU General Public License v3.0](/LICENSE)
