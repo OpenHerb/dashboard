@@ -17,14 +17,15 @@ import { LuxGaugeComponent } from './lux-gauge/lux-gauge.component';
 import { TemperatureGaugeComponent } from './temperature-gauge/temperature-gauge.component';
 import { SoilHumidityGaugeComponent } from './soil-humidity-gauge/soil-humidity-gauge.component';
 import { RelativeHumidityGaugeComponent } from './relative-humidity-gauge/relative-humidity-gauge.component';
-
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     LuxGaugeComponent,
     TemperatureGaugeComponent,
     SoilHumidityGaugeComponent,
-    RelativeHumidityGaugeComponent
+    RelativeHumidityGaugeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
