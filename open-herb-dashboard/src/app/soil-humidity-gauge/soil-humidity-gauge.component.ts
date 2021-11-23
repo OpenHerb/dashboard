@@ -20,8 +20,6 @@ export class SoilHumidityGaugeComponent implements OnInit {
 
   }
 
-
-
   onSelect(data): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
   }
