@@ -1,3 +1,11 @@
-<p>
-  temperature-gauge works!
-</p>
+<ngx-charts-gauge
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="single"
+  [legend]="legend"
+  [legendPosition]="legendPosition"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+  >
+</ngx-charts-gauge>
