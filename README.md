@@ -7,6 +7,34 @@ from the MQTT AWS service https://mqtt.org/
 This service is transporting important information from sensors ( temperature, Luminosity )
 
 
+## MQTT Broker Test Setup
+
+Start the development stack in the root of the repository:
+```bash
+docker compose up
+```
+
+RabbitMQ MQTT Broker will listen on `localhost:1883`. You can visit the RabbitMQ management dashboard on `localhost:15672` and login with admin credentials:\
+Username: `admin` \
+Password: `admin`
+
+The broker is password protected so you will need to authenticate when you configure the client with the following username and password:\
+Username: `/:microservice` \
+Password: `microservice`
+
+The telemetry topic you need to subscribe to is called `topic/telemetry`
+
+Teardown the containers
+```bash
+docker compose down
+```
+
+Remove the images and teardown:
+```bash
+docker compose down --rmi "all"
+```
+
+
 
 # OpenHerbDashboard
 
