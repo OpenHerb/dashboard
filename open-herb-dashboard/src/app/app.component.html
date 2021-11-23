@@ -1,31 +1,11 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>Custom Toolbar</span>
+    <div class="icon">
+      <img src="./assets/img/open_herb_icon.svg" alt="image">
+    </div>
+      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+    <span>Open Herb</span>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<div class="container">
-
-  <div class="item">
-    <!-- <app-soil-humidity-gauge></app-soil-humidity-gauge> -->
-    <app-relative-humidity-gauge></app-relative-humidity-gauge>
-  </div>
-  <div class="item">
-    <!-- <app-temperature-gauge></app-temperature-gauge> -->
-    <app-relative-humidity-gauge></app-relative-humidity-gauge>
-  </div>
-  
-
-  <div class="item">
-    <app-relative-humidity-gauge></app-relative-humidity-gauge>
-  </div>
-  <div class="item">
-    <!-- <app-lux-gauge></app-lux-gauge>  -->
-    <app-relative-humidity-gauge></app-relative-humidity-gauge>
-  </div>
-</div>
-
-
-
-
-
+<app-dashboard></app-dashboard>
