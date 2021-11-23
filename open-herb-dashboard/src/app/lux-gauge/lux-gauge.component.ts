@@ -6,10 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lux-gauge.component.css']
 })
 export class LuxGaugeComponent implements OnInit {
+  
+  colorScheme = {
+    domain: ['#F28C38']
+  };
 
-  constructor() { }
+  constructor() { 
+    Object.assign(this, { single });
+  }
 
   ngOnInit() {
   }
 
 }
+
+export var single = [
+  {
+    "name": "Luminosity",
+    "value": 85
+  }
+];
