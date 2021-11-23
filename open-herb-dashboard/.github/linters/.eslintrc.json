@@ -1,0 +1,28 @@
+
+   
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+      "no-console": 1,
+      "@typescript-eslint/no-var-requires": 0,
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "no-dupe-class-members": "off",
+      "require-atomic-updates": "off",
+      "block-scoped-var": "error",
+      "eqeqeq": "error",
+      "no-var": "error",
+      "prefer-const": "error",
+      "eol-last": "error",
+      "prefer-arrow-callback": "error",
+      "no-trailing-spaces": "error",
+      "quotes": ["warn", "single", { "avoidEscape": true }]
+     
