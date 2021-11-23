@@ -7,13 +7,13 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   styleUrls: ['./relative-humidity-gauge.component.css']
 })
 export class RelativeHumidityGaugeComponent implements OnInit {
-  single: any[];
+  single: Array<any>[];
   view: any[] = [500, 400];
-  legend: boolean = true;
+  legend: boolean = false;
   legendPosition: string = 'below';
 
   colorScheme = {
-    domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
+    domain: ['#00FF00']
   };
 
   constructor() { 
@@ -42,27 +42,7 @@ export class RelativeHumidityGaugeComponent implements OnInit {
 
 export var single = [
   {
-    "name": "Germany",
-    "value": 8940000
-  },
-  {
-    "name": "USA",
-    "value": 5000000
-  },
-  {
-    "name": "France",
-    "value": 7200000
-  },
-  {
-    "name": "UK",
-    "value": 5200000
-  },
-  {
-    "name": "Italy",
-    "value": 7700000
-  },
-  {
-    "name": "Spain",
-    "value": 4300000
+    "name": "Relative Humidity",
+    "value": 89.4
   }
 ];
