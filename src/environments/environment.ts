@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  RABBITMQ_ADDR: 0,
+  TELEMETRY_TOPIC: '',
+  CLIENT_ID: ''
 };
 
 /*
