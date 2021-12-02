@@ -14,7 +14,7 @@ export class SensorDataService {
   private TELEMETRY_TOPIC: string;
   private CLIENT_ID: string;
 
-  constructor(private httpClient: HttpClient, private socket: Socket) { 
+  constructor(private httpClient: HttpClient, private socket: Socket) {
     this.brokerUrl = 'http://localhost:9480/updatestockData';
     this.RABBITMQ_ADDR = environment.RABBITMQ_ADDR;
     this.TELEMETRY_TOPIC =  environment.TELEMETRY_TOPIC;

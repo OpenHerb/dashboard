@@ -6,13 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lux-gauge.component.css']
 })
 export class LuxGaugeComponent implements OnInit {
-  
+  private gaugeValue: string;
+
   colorScheme = {
     domain: ['#F28C38']
   };
 
-  constructor() { 
+  constructor() {
     Object.assign(this, { single });
+    this.gaugeValue = "Luminousity";
   }
 
   ngOnInit() {

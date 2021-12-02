@@ -1,0 +1,44 @@
+<mat-toolbar>
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+  <mat-toolbar-row>
+    <div class="icon"></div>
+    <img
+      class="avatar mat-elevation-z8"
+      src="./assets/img/open-herb-icon.png"
+    />
+    <span>Open Herb</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <img
+      class="avatar mat-elevation-z8"
+      src="https://avatars.githubusercontent.com/u/16505078?v=4"
+    />
+    <h4 class="name">Travis Haycock</h4>
+    <p class="designation">System Ottawa-grow</p>
+    <mat-divider></mat-divider>
+    <button mat-button class="menu-button">
+      <mat-icon>home</mat-icon>
+      <span>System Location</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>person</mat-icon>
+      <span>Herb conditions</span>
+    </button>
+    <mat-divider></mat-divider>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <app-dashboard></app-dashboard>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
