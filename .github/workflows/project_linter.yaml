@@ -1,0 +1,43 @@
+---
+###########################
+###########################
+## Linter GitHub Actions ##
+###########################
+###########################
+
+#
+# Documentation:
+# https://help.github.com/en/articles/workflow-syntax-for-github-actions
+
+# https://github.com/github/super-linter
+#
+
+#############################
+# Start the job on all push #
+#############################
+name: Super-Linter
+
+on: push
+
+jobs:
+  super-lint:
+    name: Lint code base
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run Super-Linter
+        uses: github/super-linter@v3
+        env:
+          DEFAULT_BRANCH: develop
+          LOG_LEVEL: VERBOSE
+          VALIDATE_ALL_CODEBASE: true
+          IGNORE_GITIGNORED_FILES: true
+          VALIDATE_DOCKER: false
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # for bash scripts - checks if they're executable
+          ERROR_ON_MISSING_EXEC_BIT: true
+          LINTER_RULES_PATH: .github/linters
+          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_YAML: true

@@ -1,0 +1,21 @@
+---
+version: "3"
+
+services:
+  rmq:
+    container_name: rmq
+    image: ghcr.io/openherb/rabbitmq:x86
+    restart: unless-stopped
+    ports:
+      - "15672:15672"
+      - "1883:1883"
+  cloudlink:
+    container_name: cloudlink
+    image: ghcr.io/openherb/cloudlink:latest
+    restart: unless-stopped
+    depends_on:
+      - rmq
+    environment:
+      - RABBITMQ_ADDR=rmq:1883
+      - TELEMETRY_TOPIC=topic/telemetry
+      - CLIENT_ID=d1db92fb-ba15-4dcd-8603-64e0bcf1828b
